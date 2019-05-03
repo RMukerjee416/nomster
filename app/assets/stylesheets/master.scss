@@ -19,19 +19,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-	background: image_url('beige-tiles.png');
+	background: image_url('congruent_pentagon');
 	font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+	color: #333A74;
 }
 
 .navbar {
-	background: image_url('memphis-mini-dark.png');
+	background: image_url('dark-paths.png');
 	box-shadow: 0px 1px 3px #8a4419;
 }
 
-.navbar-inverse .navbar-brand {
+
+.navbar-light .navbar-brand {
 	color: #107CDA;
 	font-family: 'kaushan_scriptregular', sans-serif;
-	font-size: 35px;
+	font-size: 40px;
+}
+
+
+.navbar-light .nav-link {
+	color: #B7DA10;
+	font-size: 20px;
 }
 
 .digg_pagination {
@@ -80,3 +88,7 @@ body {
   *:first-child + html .digg_pagination {
     overflow: hidden;
     }
+
+::selection {
+  background-color: #f84342;
+}
