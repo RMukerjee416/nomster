@@ -90,3 +90,10 @@ body {
 ::selection {
   background-color: #f84342;
 }
+
+.invalid-feedback {
+	color: #ff3333;
+	background-color: #E6EEF6;
+	border-radius: 3px;
+	padding: 2px 8px 2px 8px;
+}
