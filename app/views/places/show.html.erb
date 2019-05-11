@@ -55,6 +55,7 @@
       </div>
     	<%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
 	      <div class="modal-body">
+	      		<small><i>[NOTE: You must select a rating AND post 5-140 characters for your comment to be saved.]</i></small><br /><br />
 				<%= f.input :message %>
 				<%= f.input :rating, as: :select, collection: Comment::RATINGS %>
 	      </div>
