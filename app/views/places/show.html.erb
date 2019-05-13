@@ -13,7 +13,7 @@
 	        var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
 
 	        var map = new google.maps.Map(document.getElementById('map'), {
-	          zoom: 16,
+	          zoom: 14,
 	          center: myLatLng
 	        });
 
@@ -48,7 +48,7 @@
 	<br />
 </div>
 
-<!-- Modal -->
+<!-- Modal 1 for Comments -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -101,7 +101,7 @@
 
 <br />
 
-<!-- Modal -->
+<!-- Modal 2 for Photos -->
 <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -126,20 +126,19 @@
   </div>
 </div>
 
-<div class="col-10 offset-1">
-	
-</div>
-
 <% if @place.photos.present? %>
 	<div class="booyah-box col-10 offset-1">
-		<h3><u>Current Photos:</u></h3>
+		<h3><u>Uploaded Photos:</u></h3>
 		<br />
+		<div class="middle">
 		<% @place.photos.each do |photo| %>
-	  	<%= image_tag photo.picture.url, :size => "300x180" %>
+	  	<%= image_tag photo.picture.url, :size => "300x200" %>
 	  	<br />
 	    <small><%= photo.caption %></small>
 	    <br />
+	    <br />
 	    <% end %>
+		</div>
 	</div>
 <% end %>
 
