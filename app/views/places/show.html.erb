@@ -48,7 +48,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h6 class="modal-title" id="exampleModalLabel">Add A Comment</h6>
+        <h4 class="modal-title" id="exampleModalLabel"><b>Add A Comment</b></h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -94,24 +94,53 @@
 	<% end %>
 </div>
 
-<div class="booyah-box col-10 offset-1">
-<h3><u>Photos:</u></h3>
-  <div>
-	<% @place.photos.each do |photo| %>
-  	<%= image_tag photo.picture.url %>
-    <%= photo.caption %>
-    <br />
-    <small><%= comment.user.email %></small>
-    <% end %>
+<br />
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel2"><b>Add A Photo</b></h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    	<%= simple_form_for @photo, url: place_photos_path(@place) do |x| %>
+	      <div class="modal-body">
+	      		<small><i>[NOTE: You must add a caption (5-140 characters) AND upload a photo for this to be saved.]</i></small><br /><br />
+				<%= x.input :picture %>
+				<%= x.input :caption %>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			<%= x.submit "Add a Photo", class: 'btn btn-primary' %>
+	      </div>
+	    <% end %>
+    </div>
   </div>
 </div>
 
-<div class ="booyah-box col-10 offset-1">
-	<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
-		<%= f.input :picture %>
-		<%= f.input :caption %>
-		<%= f.submit "Add a Photo", class: 'btn btn-primary' %>
-	<% end %>
+<div class="col-10 offset-1">
+	<h3 class="float-left"><u>Photos:</u></h3>
+	<!-- Button trigger modal -->
+	<button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#exampleModal2">
+	  Add A Photo
+	</button>
 </div>
+
+<br />
+<br />
+
+<% if @place.photos.present? %>
+<div class="booyah-box col-10 offset-1">
+	<% @place.photos.each do |photo| %>
+  	<%= image_tag photo.picture.url %>
+  	<br />
+    <small><%= photo.caption %></small>
+    <br />
+    <% end %>
+</div>
+<% end %>
 
 <br />
