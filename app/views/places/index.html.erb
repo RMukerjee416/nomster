@@ -21,9 +21,16 @@
 				</blockquote>
 			</div>
 		<% end %>
+		<% if place.photos.present? %>
+			  	<%= image_tag place.photos.last.picture.url, :size => "300x180" %>
+			  	<br />
+			  	<small><%= place.photos.last.caption %></small>
+		<% end %>
 	</div>
 <% end %>
 <div>
+
+
 
 <br />
 
