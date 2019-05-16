@@ -5,7 +5,7 @@
 		</div>
 		<div class="clear"></div>
 		<div class="col-8">
-			<h1><%= current_user.email %></h1>
+			<h1><small><b><font color="#51c934"><%= current_user.email %></font></small></b></h1>
 			<h3>Member Since: <%= current_user.created_at.strftime("%B %d, %Y") %></h3>
 			<br />
 			<h4>- <%= current_user.comments.count %> total comments</h4>
