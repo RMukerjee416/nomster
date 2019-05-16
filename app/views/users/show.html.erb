@@ -5,21 +5,21 @@
 		</div>
 		<div class="clear"></div>
 		<div class="col-8">
-			<h1><small><b><font color="#51c934"><%= current_user.email %></font></small></b></h1>
-			<h3>Member Since: <%= current_user.created_at.strftime("%B %d, %Y") %></h3>
+			<h1><small><b><font color="#51c934"><%= @user.email %></font></small></b></h1>
+			<h3>Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h3>
 			<br />
-			<h4>- <%= current_user.comments.count %> total comments</h4>
-			<h4>- <%= current_user.comments.where(rating: '5_stars').count %> five-star review(s) in total</h4>
+			<h4>- <%= @user.comments.count %> total comments</h4>
+			<h4>- <%= @user.comments.where(rating: '5_stars').count %> five-star review(s) in total</h4>
 		</div>
 	</div>
 </div>
 
-<% if current_user.comments.present? %>
+<% if @user.comments.present? %>
 	<br />
 	<h2 class="text-center"><u>My Comments</u></h2>
 	<br />
 	<div class="row">
-	<% current_user.comments.each do |comment| %>
+	<% @user.comments.each do |comment| %>
 		<div class="col-12 col-sm-6">
 			<h3 class="text-center"><i><%= link_to comment.place.name, place_path(comment.place) %></i></h3>
 			<blockquote>
@@ -36,11 +36,11 @@
 
 <div class="clear"></div>
 
-<% if current_user.places.present? %>
+<% if @user.places.present? %>
 	<br />
 	<h2 class="text-center"><u>My Places</u></h2>
 	<br />
-	<% current_user.places.each do |place| %>
+	<% @user.places.each do |place| %>
 		<div class="booyah-box col-10 offset-1">
 			<h1><%= link_to place.name, place_path(place) %></h1><br />
 			<i><%= place.address %></i><br /><br />

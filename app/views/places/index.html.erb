@@ -44,7 +44,8 @@
 		<p><%= place.description %></p><br />
 
 		<% if place.user.present? %>
-		<small><%= place.user.email %></small>
+		<small><%= place.user.email %></small><br />
+		<%= link_to 'View User Profile', user_path(place.user) %>
 		<br />
 		<% end %>
 		
