@@ -1,1 +1,4 @@
-<h1>User Dashboard</h1>
+<h1><%= current_user.email %></h1>
+<h3>Member Since: <%= current_user.created_at.strftime("%B %d, %Y") %></h3>
+<h4><%= current_user.comments.count %> total comments</h4>
+<h4><%= current_user.comments.where(rating: '5_stars').count %> five-star review(s)</h4>
