@@ -27,7 +27,6 @@
 					<b><%= comment.humanized_rating %></b>: 
 				<% end %>
 				<%= comment.message %>
-				<small><%= comment.user.email %>&nbsp;[<%= link_to 'View User Profile', user_path(comment.user) %>]
 				</small>
 			</blockquote>
 		</div>
