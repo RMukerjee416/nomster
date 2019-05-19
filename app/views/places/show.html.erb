@@ -1,11 +1,13 @@
 <div class ="booyah-box col-10 offset-1">
 	<h1><%= @place.name %></h1>
-	<br />
+	<br /><br />
 	<i><%= @place.address %></i>
 	<br />
 	<br />
 	<p><%= @place.description %></p>
-
+	<br /><small>
+	Place & photo(s) added by: <b><font color="green"><%= @place.user.email %></font></b>&nbsp;
+	[<%= link_to 'View User Profile', user_path(@place.user) %>]</small>
 
 <% if @place.latitude.present? && @place.longitude.present? %>
 		<script>
