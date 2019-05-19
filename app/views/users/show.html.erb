@@ -54,8 +54,8 @@
 	            	<b><%= place.comments.last.humanized_rating %></b> -
 	          		<% end %>
 	          		<%= place.comments.last.message %>
-	          		<small><%= place.comments.last.user.email %>&nbsp;[
-	          		<%= link_to 'View User Profile', user_path(place.comments.last.user) %>]</small>
+	          		<small><%= place.comments.last.user.email %>&nbsp;
+	          		[<%= link_to 'View User Profile', user_path(place.comments.last.user) %>]</small>
 	          		</small>
 	        	</blockquote>
 	      	</div>
