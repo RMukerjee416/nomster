@@ -92,7 +92,8 @@
 					<b><%= comment.humanized_rating %></b>: 
 				<% end %>
 				<%= comment.message %>
-				<small><%= comment.user.email %></small>
+				<small><%= comment.user.email %>
+				<%= link_to '[View User Profile]', user_path(comment.user) %></small></blockquote>
 			</blockquote>
 		</div>
 	<% end %>
