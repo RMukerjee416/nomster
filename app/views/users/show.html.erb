@@ -27,7 +27,8 @@
 					<b><%= comment.humanized_rating %></b>: 
 				<% end %>
 				<%= comment.message %>
-				<small><%= comment.user.email %></small>
+				<small><%= comment.user.email %>&nbsp;[<%= link_to 'View User Profile', user_path(comment.user) %>]
+				</small>
 			</blockquote>
 		</div>
 	<% end %>
@@ -53,7 +54,9 @@
 	            	<b><%= place.comments.last.humanized_rating %></b> -
 	          		<% end %>
 	          		<%= place.comments.last.message %>
-	          		<small><%= place.comments.last.user.email %></small>
+	          		<small><%= place.comments.last.user.email %>&nbsp;[
+	          		<%= link_to 'View User Profile', user_path(place.comments.last.user) %>]</small>
+	          		</small>
 	        	</blockquote>
 	      	</div>
 	    	<% end %>

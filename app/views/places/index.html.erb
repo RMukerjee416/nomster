@@ -57,7 +57,7 @@
 					<% end %>
 					<%= place.comments.last.message %>
 					<small><%= place.comments.last.user.email %>
-					&nbsp;<%= link_to '[View User Profile]', user_path(place.comments.last.user) %></small>
+					&nbsp;[<%= link_to 'View User Profile', user_path(place.comments.last.user) %>]</small>
 				</blockquote>
 			</div>
 		<% end %>
