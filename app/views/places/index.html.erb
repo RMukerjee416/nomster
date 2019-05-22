@@ -39,6 +39,16 @@
 <div>
 <% @places.each do |place| %>
 	<div class="booyah-box col-10 offset-1">
+		<% if place.photos.present? %>
+			<div class="float-right">
+				<div class="middle">
+				  	<%= image_tag place.photos.last.picture.url, :size => "300x200" %>
+				  	<br />
+				  	<small><%= place.photos.last.caption %></small>
+			  	</div>
+			  	<div class="clear"></div>
+			</div>
+		<% end %>
 		<h1><%= link_to place.name, place_path(place) %></h1><br />
 		<i><%= place.address %></i><br /><br />
 		<p><%= place.description %></p><br />
@@ -60,14 +70,6 @@
 					&nbsp;[<%= link_to 'View User Profile', user_path(place.comments.last.user) %>]</small>
 				</blockquote>
 			</div>
-		<% end %>
-		
-		<% if place.photos.present? %>
-				<div class="middle">
-				  	<%= image_tag place.photos.last.picture.url, :size => "300x200" %>
-				  	<br />
-				  	<small><%= place.photos.last.caption %></small>
-			  	</div>
 		<% end %>
 	</div>
 <% end %>
