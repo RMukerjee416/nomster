@@ -76,7 +76,7 @@ gem 'simple_form'
 
 gem "font-awesome-rails"
 
-gem 'devise'
+gem "devise", ">= 4.7.1"
 
 gem "geocoder"
 
